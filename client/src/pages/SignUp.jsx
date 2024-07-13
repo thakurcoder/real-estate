@@ -50,7 +50,7 @@ function SignUp() {
     <div className='w-full p-3 '>
       <div className=' mx-auto  '>
         <h1 className='text-3xl text-center font-semibold p-1 py-4'>Sign Up</h1>
-          {error && <p className='text-red-600'>{errorMessage}</p>}
+          {error && <p className='text-red-600 text-center'>{errorMessage}</p>}
         <form onSubmit={handleSubmit} className='flex flex-col gap-4 items-center'>
           <input type='text' placeholder='username' required className='border p-3 rounded-lg w-80' id='username' onChange={handleChange}/>
           <input type='email' placeholder='email' required className='border p-3 rounded-lg w-80' id='email' onChange={handleChange}/>
