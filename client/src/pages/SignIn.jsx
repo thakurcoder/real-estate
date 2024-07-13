@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Link, useNavigate} from "react-router-dom"
+import { signInFailure,signInStart,signInSuccess } from '../redux/user/userSlice'
+import { useDispatch } from 'react-redux'
 
 function SignIn() {
 
@@ -7,6 +9,7 @@ function SignIn() {
   const [error,setError] = useState(false)
   const [errorMessage,setErrorMessage] = useState("")
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   // function for handling input on change
   const handleChange = (e)=>{
 
@@ -37,6 +40,7 @@ function SignIn() {
       }
     }
     else{
+      dispatch(signInSuccess(data))
       navigate("/")
     }
   }
