@@ -8,6 +8,7 @@ import {
   Link,
 } from "react-router-dom";
 import SinglePage from "./components/SinglePage";
+import Profile from "./components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   {
     path:'/:id',
     element:<SinglePage/>
-  }
+  },
+  {
+    path:'/profile',
+    element:<Profile/>
+  },
 
 ])
 
