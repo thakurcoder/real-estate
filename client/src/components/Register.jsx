@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import apiRequest from '../lib/apiRequest';
 
 function Register() {
   const [data, setData] = useState({
@@ -22,7 +23,7 @@ function Register() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register",data)
+      const res = await apiRequest.post("api/auth/register",data)
       console.log("res",res)
       if(res.status == 201){
         console.log("success")
