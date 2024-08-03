@@ -38,6 +38,7 @@ function UpdateProfile() {
         try {
             const res = await apiRequest.put("/api/user/update",formData)
             console.log(res)
+            navigate("/profile")
         } catch (error) {
             console.log(error)
         }
