@@ -37,9 +37,9 @@ function Navbar() {
       </div>
       {/* links */}
       <div className='hidden lg:flex space-x-8'>
-        <a href="/" className='hover:text-blue-500 transition-colors'>Home</a>
-        <a href="/about" className='hover:text-blue-500 transition-colors'>About</a>
-        <a href="/contact" className='hover:text-blue-500 transition-colors'>Contact</a>
+        <Link to={"/"} className='hover:text-blue-500 transition-colors'>Home</Link>
+        <Link to={"/about"} className='hover:text-blue-500 transition-colors'>About</Link>
+        <Link to={"/contact"} className='hover:text-blue-500 transition-colors'>Contact</Link>
         {/* <a>Agent</a> */}
       </div>
     {/* signup */}
@@ -51,11 +51,11 @@ function Navbar() {
         <img className='w-11 h-11 rounded-full border-2 border-gray-300' src={user.avatar || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABqQIdskCD9BK0I81EbVfV9tTz320XvJ35A&s"} />
         <spna className="text-sm">{user.username}</spna>
         </div>
-        <a className='text-white hover:text-blue-400' href='/profile' >Profile</a>
+        <Link className='text-white hover:text-blue-400' to={'/profile'} >Profile</Link>
       </div>
       :
-      <> <a href='/login' className='p-2 bg-teal-600 text-white hover:bg-fuchsia-600 rounded-md transition-colors'>Sign In</a>
-      <a href='/register' className='bg-teal-600 text-white p-2 rounded-md hover:bg-fuchsia-600 transition-colors'>Sign Up</a>
+      <> <Link to={'/login'} className='p-2 bg-teal-600 text-white hover:bg-fuchsia-600 rounded-md transition-colors'>Sign In</Link>
+      <Link to={'/register'} className='bg-teal-600 text-white p-2 rounded-md hover:bg-fuchsia-600 transition-colors'>Sign Up</Link>
       </>}
       </div>
       {/* menu  */}
@@ -64,9 +64,9 @@ function Navbar() {
       <CiMenuBurger />
       </div>
       {isOpen && <div className='absolute top-11 h-screen  bg-sky-700 text-white flex flex-col p-5 space-y-4 right-0 w-1/4 lg:hidden text-sm items-center z-50'>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>About</Link>
+        <Link to={"/contact"}>Contact</Link>
         {/* <a>Agent</a> */}
       
         {user?
@@ -78,8 +78,8 @@ function Navbar() {
         <a href='/profile' >Profile</a>
       </div>
       :
-      <> <a href='/login'>Sign In</a>
-      <a href='/register'>Sign Up</a>
+      <> <Link to={'/login'}>Sign In</Link>
+      <Link to={'/register'}>Sign Up</Link>
       </>}
       </div>}
 

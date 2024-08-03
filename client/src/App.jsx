@@ -15,58 +15,61 @@ import NewPost from "./components/NewPost";
 import UpdateProfile from "./components/UpdateProfile";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
+import Layout from "./Layout";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<HomePage/>
-  },
-  {
-    path:'/list',
-    element:<List/>
-  },
-  {
-    path:'/:id',
-    element:<SinglePage/>
-  },
-  {
-    path:'/profile',
-    element:<Profile/>
-  },
-  {
-    path:'/register',
-    element:<Register/>
-  },
-  {
-    path:'/login',
-    element:<Login/>
-  },
-  {
-    path:'/newpost',
-    element:<NewPost/>
-  },
-  {
-    path:'/updateuser',
-    element:<UpdateProfile/>
-  },
-  {
-    path:'/about',
-    element:<AboutPage/>
-  },
-  {
-    path:'/contact',
-    element:<ContactPage/>
-  },
-
-])
+    element: <Layout />, // Use the Layout component
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      },
+      {
+        path: "/list",
+        element: <List />
+      },
+      {
+        path: "/:id",
+        element: <SinglePage />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/newpost",
+        element: <NewPost />
+      },
+      {
+        path: "/updateuser",
+        element: <UpdateProfile />
+      },
+      {
+        path: "/about",
+        element: <AboutPage />
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />
+      },
+    ]
+  }
+]);
 
 function App() {
-
   return (
     <div>
-    <Navbar/>
-    <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
-  )
+  );
 }
 export default App
