@@ -15,7 +15,7 @@ app.use(cookieParser())
 app.use(express.json()); // for reading json from browser
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://real-estate-frontend-xpfi.onrender.com",
     credentials:true
 }))
 
