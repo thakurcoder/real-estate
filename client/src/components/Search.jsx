@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
 
 function Search() {
   const [active, setActive] = useState(true);
@@ -9,6 +10,12 @@ function Search() {
     minPrice: 0,
     maxPrice: 0,
   });
+  const navigate = useNavigate()
+
+  const search = (e)=>{
+    e.preventDefault()
+    navigate("/list",{state : query})
+  }
 
   const switchType = (e) => {
     const newType = e.target.id;
@@ -56,20 +63,20 @@ function Search() {
             min ={0}
             max={1000000000}
             placeholder='Min Price' 
-            value={query.minPrice} 
+            // value={query.minPrice} 
             onChange={handleChange} 
           />
           <input 
             className='w-full h-11 outline-none p-2 mb-4 lg:mb-0 lg:w-32' 
             name="maxPrice" 
             type="number" 
+            placeholder='Max Price' 
             min ={0}
             max={1000000000}
-            placeholder='Max Price' 
-            value={query.maxPrice} 
+            // value={query.maxPrice} 
             onChange={handleChange} 
           />
-          <button className='text-4xl h-full  w-28 bg-amber-400 flex justify-center items-center'>
+          <button onClick={search} className='text-4xl h-full  w-28 bg-amber-400 flex justify-center items-center'>
             <CiSearch />
           </button>
         </form>

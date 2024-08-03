@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 
 function Map({ items }) {
   const position = [items[0].latitude, items[0].longitude];
-
+  console.log("item",items)
   return (
     <div className='w-full h-full'>
       <MapContainer center={position} zoom={13} scrollWheelZoom={false} className='w-full h-full'>

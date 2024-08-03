@@ -1,8 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { sliderStore } from '../lib/userStore';
 
-function Slider({ images }) {
+function Slider({ images,slider }) {
+
+  
   const [imageIndex, setImageIndex] = useState(null);
+  const setSlider = sliderStore((state) => state.setSlider);
 
   const changeSlide = (direction) => {
     if (direction === "left") {
@@ -37,7 +41,10 @@ function Slider({ images }) {
           </div>
           <div
             className="absolute top-4 right-4 cursor-pointer text-white text-xl z-50"
-            onClick={() => setImageIndex(null)}
+            onClick={() => {
+              setImageIndex(null);
+              slider(true)
+            }}
           >
             X
           </div>
