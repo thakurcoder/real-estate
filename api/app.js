@@ -16,7 +16,9 @@ app.use(express.json()); // for reading json from browser
 
 app.use(cors({
     origin:"https://real-estate-frontend-xpfi.onrender.com",
-    credentials:true
+    credentials:true,
+    origin:"https://dream-home-true.netlify.app",
+    credentials:true,
 }))
 
 app.use("/api/test",(req,res)=>{
