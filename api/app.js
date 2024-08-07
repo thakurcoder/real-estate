@@ -15,13 +15,13 @@ app.use(cookieParser())
 app.use(express.json()); // for reading json from browser
 
 app.use(cors({
-    origin:"https://real-estate-frontend-xpfi.onrender.com",
-    credentials:true,
-    origin:"https://dream-home-true.netlify.app",
-    credentials:true,
-    origin:"http://localhost:5173",
-    credentials:true,
-}))
+    origin: [
+        "https://real-estate-frontend-xpfi.onrender.com",
+        "https://dream-home-true.netlify.app",
+        "http://localhost:5173"
+    ],
+    credentials: true,
+}));
 
 app.use("/api/test",(req,res)=>{
     res.send("hello")
