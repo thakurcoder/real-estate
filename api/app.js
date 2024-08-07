@@ -23,6 +23,8 @@ app.use(cors({
     credentials: true,
 }));
 
+app.set("trust proxy", 1); // Trust the first proxy
+
 app.use("/api/test",(req,res)=>{
     res.send("hello")
 })
