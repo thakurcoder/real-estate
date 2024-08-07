@@ -19,7 +19,7 @@ app.use(cors({
     credentials:true,
     origin:"https://dream-home-true.netlify.app",
     credentials:true,
-    origin:"http://localhost:5173/",
+    origin:"http://localhost:5173",
     credentials:true,
 }))
 
